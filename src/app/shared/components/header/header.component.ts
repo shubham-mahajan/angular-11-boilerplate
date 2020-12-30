@@ -14,7 +14,6 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.toastService.showSuccess("I am toast message")
   }
 
 }
