@@ -27,6 +27,8 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   canLoad(
     route: Route,
     segments: UrlSegment[]): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+      
+      // Need to change according to the login mechanism
       if (!this.utilService.readLocalStorage('data', 'accessToken')) {
         this.router.navigate(['']);
         return of(false);
