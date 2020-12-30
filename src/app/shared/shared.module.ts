@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SanitizePipe } from './pipes/sanitize.pipe';
 // import { sharedPipes } from './pipes';
 // import { sharedGuards } from './guards';
 
@@ -15,6 +16,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     ...sharedComponents,
+    SanitizePipe,
   ],
   imports: [
     CommonModule,
