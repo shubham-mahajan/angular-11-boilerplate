@@ -15,6 +15,7 @@ export class RestService {
   constructor(
     private httpClient: HttpClient,
   ) {
+    this.headers = new HttpHeaders();
     this.baseApiUrl = environment.base_url;
     this.options = {
       observe: 'body',

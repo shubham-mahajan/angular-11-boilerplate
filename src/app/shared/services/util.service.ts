@@ -7,8 +7,8 @@ export class UtilService {
 
   constructor() { }
 
-  getLocalStorage(key: any, filterKey?: string) {
-    const item = JSON.parse(localStorage.getItem(key));
+  getLocalStorage(key?: string, filterKey?: string) {
+    const item: any = JSON.parse(localStorage.getItem(key));
     
     if (filterKey && item && item[filterKey]) {
       return item[filterKey];
@@ -19,9 +19,9 @@ export class UtilService {
     }
   }
 
-  setLocalStorage(setTo, key, value) {
+  setLocalStorage(setTo: any, key: string, value: any) {
     let data;
-    const newValue = {};
+    let newValue: any = {};
     newValue[key] = value;
     if (this.getLocalStorage(setTo)) {
       data = this.getLocalStorage(setTo);
@@ -32,7 +32,7 @@ export class UtilService {
     localStorage.setItem(setTo, JSON.stringify(data));
   }
 
-  readLocalStorage(from, key) {
+  readLocalStorage(from: any, key: any) {
     const item = this.getLocalStorage(from);
     if (item && item[key]) {
       return true;
@@ -41,7 +41,7 @@ export class UtilService {
     }
   }
 
-  removeLocalStorage(from, key) {
+  removeLocalStorage(from: any, key: any) {
     const data = this.getLocalStorage(from);
     if (data) {
       delete data[key];
