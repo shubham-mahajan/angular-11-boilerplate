@@ -7,8 +7,8 @@ export class UtilService {
 
   constructor() { }
 
-  getLocalStorage(key?: string, filterKey?: string) {
-    const item: any = JSON.parse(localStorage.getItem(key));
+  getLocalStorage(key: string, filterKey?: string) {
+    const item: any = JSON.parse(localStorage.getItem(key) || '{}');
     
     if (filterKey && item && item[filterKey]) {
       return item[filterKey];
